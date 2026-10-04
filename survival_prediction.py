@@ -21,7 +21,16 @@ from sklearn.metrics import (
 # ---------------------------------------------------------
 # 1. LOAD DATA
 # ---------------------------------------------------------
-df = pd.read_csv("titanic_raw.csv")
+import os
+import seaborn as sns
+
+# Use a local copy if present, otherwise load the public Titanic dataset bundled with Seaborn
+DATA_FILE = "titanic_raw.csv"
+if os.path.exists(DATA_FILE):
+    df = pd.read_csv(DATA_FILE)
+else:
+    df = sns.load_dataset("titanic")
+    df.to_csv(DATA_FILE, index=False)
 print(f"Raw dataset shape: {df.shape}")
 print(f"Missing values before cleaning:\n{df.isnull().sum()[df.isnull().sum() > 0]}\n")
 

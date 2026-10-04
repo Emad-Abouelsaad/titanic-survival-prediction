@@ -31,6 +31,7 @@ evacuation pattern.
 Python, Pandas, Scikit-learn, Matplotlib, Seaborn (for dataset loading)
 
 ## Files
+- `titanic_raw.csv` — raw Titanic passenger dataset (891 rows)
 - `survival_prediction.py` — full pipeline: load → clean → engineer features → train → evaluate
 - `confusion_matrices.png` — confusion matrices for both models
 - `feature_importance.png` — Random Forest feature importance chart
@@ -40,3 +41,5 @@ Python, Pandas, Scikit-learn, Matplotlib, Seaborn (for dataset loading)
 pip install pandas scikit-learn matplotlib seaborn
 python survival_prediction.py
 ```
+
+The dataset (`titanic_raw.csv`) is included. If it is missing, the script loads the public Titanic dataset through Seaborn and saves it automatically.
